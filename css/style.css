@@ -1,3 +1,7 @@
+body{
+    font-family:  'Edu Tas Beginner', sans-serif;
+}
+
 
 /* testa della pagina */
 
@@ -9,12 +13,33 @@ header{
 h1{
     line-height: 150px;
     font-size: 80px;
-    font-family:  'Edu Tas Beginner', sans-serif;
 }
 
 /* corpo della pagina */
 
 main{
     background-image: url(../img/img/cork.png);
-    height: calc(100vh - 150px);
+    height: calc(100% - 150px);
+    padding-top: 50px;
+}
+
+main div.container{
+    max-width: 65%;
+    
+}
+
+.card{
+    border-radius: 0px;
+    width: 300px;
+    height: 360px;
+    padding: 15px;
+}
+
+.card .pin{
+    width: 30px;
+    height: 30px; 
+}
+
+.card img{
+    margin-bottom: 15px;
 }
