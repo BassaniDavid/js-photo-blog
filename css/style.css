@@ -23,7 +23,7 @@ main{
 }
 
 main div.container{
-    max-width: 65%;
+    padding: 0 5vw;
     
 }
 
@@ -41,4 +41,12 @@ main div.container{
 
 .card img{
     margin-bottom: 15px;
+    object-fit: contain;
 }
+
+
+@media screen and (max-width: 768px) {
+    h1{
+        font-size: 60px;
+    }
+  }
