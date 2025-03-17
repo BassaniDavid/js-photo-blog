@@ -28,7 +28,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
        ${error}
       </div>`
     }
-);
+    );
 
 
 // day2
@@ -36,11 +36,35 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
 const button = document.getElementById('button');
 console.log(button);
 
-let overlay =document.getElementById('overlay');
+let overlay = document.getElementById('overlay');
 console.log(overlay)
 
-button.addEventListener("click", btnOverlayFunction);
+// evento clicco bottone
+button.addEventListener("click", closeOverlay);
 
-function btnOverlayFunction() {
+function closeOverlay() {
     overlay.classList.add('d-none')
 };
+
+// richiamo card
+let card;
+
+const myTimeout = setTimeout(cardList, 100);
+const mySecondTimeout = setTimeout(delayEvent, 200);
+
+function cardList() {
+    card = document.querySelectorAll('.card')
+    console.log(card)
+}
+
+// apertura overlay al click su card
+function delayEvent() {
+    for (let i = 0; i < card.length; i++) {
+        card[i].addEventListener("click", openOverlay);
+    }
+}
+
+function openOverlay() {
+    overlay.classList.remove('d-none')
+}
+
