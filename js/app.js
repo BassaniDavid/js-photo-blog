@@ -11,12 +11,39 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         imgArray.forEach(element => {
             const { title, date, url, id } = element
             console.log(title, url, id);
-            mainContainer.innerHTML += `<div class="card position-relative">
-                <img class="image" src="${(url)}" alt="immagine numero ${(id)}">
-                <p class="date text-secondary">${(date)}</p>
-                <p class="title fs-5 fw-bold mb-0 text-uppercase">${(title)}</p>
-                <img class="pin position-absolute top-0 start-50 translate-middle" src="img/img/pin.svg" alt="immagine pin">
-            </div>`
+
+            const divContainer = document.createElement('div');
+            divContainer.classList.add('card', 'position-relative');
+            mainContainer.appendChild(divContainer);
+
+            const imgElement = document.createElement('img');
+            imgElement.src = (url);
+            imgElement.alt = `immagine numero ${(id)}`
+            imgElement.classList.add('image');
+            divContainer.appendChild(imgElement);
+
+            const parDate = document.createElement("p");
+            parDate.innerHTML = (date);
+            parDate.classList.add('date', 'text-secondary');
+            divContainer.appendChild(parDate);
+
+            const parTitol = document.createElement("p");
+            parTitol.innerHTML = (title);
+            parTitol.classList.add('title', 'fs-5', 'fw-bold', 'mb-0', 'text-uppercase');
+            divContainer.appendChild(parTitol);
+
+            const imgPin = document.createElement('img');
+            imgPin.src = "img/img/pin.svg";
+            imgPin.alt = "immagine pin"
+            imgPin.classList.add('pin', 'position-absolute', 'top-0', 'start-50', 'translate-middle');
+            divContainer.appendChild(imgPin);
+
+            divContainer.addEventListener("click", openOverlay);
+
+            function openOverlay() {
+                overlay.classList.remove('d-none')
+                divImage.innerHTML = `<img class="overlay-img" src="${url}" alt="overlay immagine ${id}">`
+            }
         });
 
     })
@@ -52,23 +79,11 @@ function closeOverlay() {
 // richiamo card
 let card;
 
-const myTimeout = setTimeout(cardList, 100);
-const mySecondTimeout = setTimeout(delayEvent, 200);
-
 function cardList() {
     card = document.querySelectorAll('.card')
     console.log(card)
 }
 
-// apertura overlay al click su card
-function delayEvent() {
-    for (let i = 0; i < card.length; i++) {
-        card[i].addEventListener("click", openOverlay);
-    }
-}
 
-function openOverlay() {
-    overlay.classList.remove('d-none')
-    divImage.innerHTML = `<img class="overlay-img" src="https://marcolanci.it/boolean/assets/pictures/1.png" alt="">`
-}
+
 
