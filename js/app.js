@@ -12,7 +12,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             const { title, date, url, id } = element
             console.log(title, url, id);
             mainContainer.innerHTML += `<div class="card position-relative">
-                <img src="${(url)}" alt="immagine numero ${(id)}">
+                <img class="image" src="${(url)}" alt="immagine numero ${(id)}">
                 <p class="date text-secondary">${(date)}</p>
                 <p class="title fs-5 fw-bold mb-0 text-uppercase">${(title)}</p>
                 <img class="pin position-absolute top-0 start-50 translate-middle" src="img/img/pin.svg" alt="immagine pin">
@@ -27,4 +27,20 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
        here are the details:
        ${error}
       </div>`
-    })
+    }
+);
+
+
+// day2
+
+const button = document.getElementById('button');
+console.log(button);
+
+let overlay =document.getElementById('overlay');
+console.log(overlay)
+
+button.addEventListener("click", btnOverlayFunction);
+
+function btnOverlayFunction() {
+    overlay.classList.add('d-none')
+};
