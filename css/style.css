@@ -54,7 +54,6 @@ main div.container {
 
 #overlay {
     position: fixed;
-    /* display: none; */
     width: 100%;
     height: 100%;
     top: 0;

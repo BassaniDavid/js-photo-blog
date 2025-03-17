@@ -36,8 +36,11 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
 const button = document.getElementById('button');
 console.log(button);
 
-let overlay = document.getElementById('overlay');
+const overlay = document.getElementById('overlay');
 console.log(overlay)
+
+const divImage = document.querySelector('.div-image')
+console.log(divImage)
 
 // evento clicco bottone
 button.addEventListener("click", closeOverlay);
@@ -66,5 +69,6 @@ function delayEvent() {
 
 function openOverlay() {
     overlay.classList.remove('d-none')
+    divImage.innerHTML = `<img class="overlay-img" src="https://marcolanci.it/boolean/assets/pictures/1.png" alt="">`
 }
 
