@@ -33,6 +33,7 @@ main div.container {
     height: 360px;
     padding: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.329);
+    transition: transform 0.5s;
 }
 
 .card .pin {
@@ -81,6 +82,27 @@ main div.container {
 .overlay-img{  
     max-width: 100%;
 }
+
+/* bonus */
+.card:hover{
+    z-index: 1;
+    transform: rotate(10deg) scale(1.1);
+    animation: animate 0.5s;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+
+.card:hover .pin{
+    display: none;
+}
+
+.z-index{
+    z-index: 2;
+}
+
+
+
 
 
 

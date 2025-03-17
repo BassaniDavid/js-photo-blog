@@ -12,33 +12,33 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             const { title, date, url, id } = element
             console.log(title, url, id);
 
-            const divContainer = document.createElement('div');
-            divContainer.classList.add('card', 'position-relative');
-            mainContainer.appendChild(divContainer);
+            const divCard = document.createElement('div');
+            divCard.classList.add('card', 'position-relative');
+            mainContainer.appendChild(divCard);
 
             const imgElement = document.createElement('img');
             imgElement.src = (url);
             imgElement.alt = `immagine numero ${(id)}`
             imgElement.classList.add('image');
-            divContainer.appendChild(imgElement);
+            divCard.appendChild(imgElement);
 
             const parDate = document.createElement("p");
             parDate.innerHTML = (date);
             parDate.classList.add('date', 'text-secondary');
-            divContainer.appendChild(parDate);
+            divCard.appendChild(parDate);
 
             const parTitol = document.createElement("p");
             parTitol.innerHTML = (title);
             parTitol.classList.add('title', 'fs-5', 'fw-bold', 'mb-0', 'text-uppercase');
-            divContainer.appendChild(parTitol);
+            divCard.appendChild(parTitol);
 
             const imgPin = document.createElement('img');
             imgPin.src = "img/img/pin.svg";
             imgPin.alt = "immagine pin"
             imgPin.classList.add('pin', 'position-absolute', 'top-0', 'start-50', 'translate-middle');
-            divContainer.appendChild(imgPin);
+            divCard.appendChild(imgPin);
 
-            divContainer.addEventListener("click", openOverlay);
+            divCard.addEventListener("click", openOverlay);
 
             function openOverlay() {
                 overlay.classList.remove('d-none')
@@ -82,8 +82,7 @@ let card;
 function cardList() {
     card = document.querySelectorAll('.card')
     console.log(card)
-}
-
+};
 
 
 
