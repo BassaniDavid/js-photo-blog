@@ -14,7 +14,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             mainContainer.innerHTML += `<div class="card position-relative">
                 <img src="${(url)}" alt="immagine numero ${(id)}">
                 <p class="date text-secondary">${(date)}</p>
-                <p class="title fs-4 fw-bold mb-0">${(title)}</p>
+                <p class="title fs-5 fw-bold mb-0 text-uppercase">${(title)}</p>
                 <img class="pin position-absolute top-0 start-50 translate-middle" src="img/img/pin.svg" alt="immagine pin">
             </div>`
         });
