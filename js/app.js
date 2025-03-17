@@ -9,11 +9,12 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         const imgArray = response.data
         console.log(imgArray)
         imgArray.forEach(element => {
-            const { title, url, id } = element
+            const { title, date, url, id } = element
             console.log(title, url, id);
             mainContainer.innerHTML += `<div class="card position-relative">
                 <img src="${(url)}" alt="immagine numero ${(id)}">
-                <p class="fst-italic">${(title)}</p>
+                <p class="date text-secondary">${(date)}</p>
+                <p class="title fs-4 fw-bold mb-0">${(title)}</p>
                 <img class="pin position-absolute top-0 start-50 translate-middle" src="img/img/pin.svg" alt="immagine pin">
             </div>`
         });
