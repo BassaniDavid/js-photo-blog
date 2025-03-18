@@ -21,18 +21,18 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             const divCardRel = document.createElement('div');
             divCardRel.classList.add('position-relative');
             divCard.appendChild(divCardRel);
-
-            const imgElement = document.createElement('img');
-            imgElement.src = (url);
-            imgElement.alt = `immagine numero ${(id)}`;
-            imgElement.classList.add('image');
-            divCardRel.appendChild(imgElement);
             
             const imgPin = document.createElement('img');
             imgPin.src = "img/img/pin.svg";
             imgPin.alt = "immagine pin";
             imgPin.classList.add('pin', 'position-absolute', 'start-50', 'translate-middle');
             divCardRel.appendChild(imgPin);
+
+            const imgElement = document.createElement('img');
+            imgElement.src = (url);
+            imgElement.alt = `immagine numero ${(id)}`;
+            imgElement.classList.add('image');
+            divCard.appendChild(imgElement);
 
             const parDate = document.createElement("p");
             parDate.innerHTML = (date);
