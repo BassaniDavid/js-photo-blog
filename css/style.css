@@ -4,7 +4,6 @@ body {
 
 
 /* testa della pagina */
-
 header {
     height: 150px;
     background-image: url(../img/img/wall.png);
@@ -16,7 +15,6 @@ h1 {
 }
 
 /* corpo della pagina */
-
 main {
     background-image: url(../img/img/cork.png);
     padding-top: 50px;
@@ -24,7 +22,6 @@ main {
 
 main div.container {
     padding: 0 5vw;
-
 }
 
 .card {
@@ -33,17 +30,19 @@ main div.container {
     height: 360px;
     padding: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.329);
-    transition: transform 0.5s;
+    transition: all 0.5s;
+    position: static;
 }
 
 .card .pin {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    top: -8px;
 }
 
-.card img {
+img {
     margin-bottom: 5px;
-    object-fit: contain;
+    max-width: 100%;
 }
 
 .card .date {
@@ -63,7 +62,6 @@ main div.container {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    cursor: pointer;
 }
 
 .overlay-div {
@@ -72,6 +70,7 @@ main div.container {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
+    cursor: pointer;
     text-align: center;
 }
 
@@ -83,27 +82,21 @@ main div.container {
     max-width: 100%;
 }
 
-/* bonus */
-.card:hover{
-    z-index: 1;
-    transform: rotate(10deg) scale(1.1);
-    animation: animate 0.5s;
-    box-shadow: 10px 10px 6px rgba(0, 0, 0, .3);
-    cursor: pointer;
+.hidden{
+    overflow-y: hidden;
 }
 
+/* bonus */
+.card:hover{
+    transform: rotate(10deg) scale(1.08);
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, .3);
+    z-index: 1;
+    cursor: pointer;
+}
 
 .card:hover .pin{
     display: none;
 }
-
-.z-index{
-    z-index: 2;
-}
-
-
-
-
 
 
 /*** mediaquery ***/
@@ -113,5 +106,6 @@ main div.container {
     }
     .overlay-div {
         width: 90%;
+        max-width: 600px;
     }
 }
